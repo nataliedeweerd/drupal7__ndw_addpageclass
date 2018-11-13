@@ -1,0 +1,4 @@
+name = Add Page Class
+description = Adds page alias as a class on the body.
+core = 7.x
+package = NdW

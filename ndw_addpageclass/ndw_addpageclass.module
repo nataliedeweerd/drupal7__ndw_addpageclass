@@ -3,7 +3,15 @@
 /*
  * Add path alias to body class.
  **/
-function ndw_addpageclass_preprocess_html(&$vars) {
+function hrg_addpageclass_preprocess_html(&$vars) {
+	// Add user role to body class
+	global $user;
+	
+	foreach($user->roles as $role){
+		$vars['classes_array'][] = "user_role--".drupal_clean_css_identifier($role);
+	}
+		
+	// Add page to body class
     $path = drupal_get_path_alias();
     $aliases = explode('/', $path);
 
